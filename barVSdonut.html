@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- <html data-bs-theme="dark"> -->
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gráfico ApexCharts</title>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="src/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8">
+        <!-- Contiene el chart -->
+        <div id="chart"></div>
+      </div>
+      <div class="col-4">
+      
+        <!-- Modificaciones dinamicas -->
+        
+        <div class="input-group mt-5">
+          <input type="text" class="form-control"  aria-label="Cambiar titulo" id="inputTitulo" name="inputTitulo"
+          oninput="cambiarTitulo()"><br><br>
+          <button class="btn btn-outline-secondary" type="button" onclick="cambiarTitulo()">Titulo</button>
+        </div>
+
+        <div class="input-group mt-2">
+          <input type="number" class="form-control"  aria-label="Cambiar titulo font size" id="inputTituloFontSize" name="inputTituloFontSize"
+          min="6" max="96" oninput="cambiarTituloFontSize()" onkeypress="return onlyNumbers(event)" ><br><br>
+          <button class="btn btn-outline-secondary" type="button" onclick="cambiarTituloFontSize()">T Font Size</button>
+        </div>
+
+        <div class="input-group mt-2">
+          <input type="number" class="form-control"  aria-label="Cambiar titulo font weight" id="inputTituloFontWeight" name="inputTitulo"
+          oninput="cambiarTituloFontWeight(event)" min="100" max="900" step="100"><br><br>
+          <button class="btn btn-outline-secondary" type="button" onclick="cambiarTituloFontWeight()">T Font Weight</button>
+        </div>
+
+        <div class="input-group mt-2">
+          <select class="form-select" id="inputTituloFontFamily" oninput="cambiarTituloFontFamily(event)">
+            <option value="serif">serif</option>
+            <option value="sans-serif">sans-serif</option>
+            <option value="monospace">monospace</option>
+            <option value="cursive">cursive</option>
+            <option value="fantasy">fantasy</option>
+            <option value="system-ui">system-ui</option>
+          </select>
+          <button class="btn btn-outline-secondary" type="button">T Font family</button>
+        </div>
+      
+      
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- No es funcional todavía -->
+  <button class="floating-button" onclick="saveChartType()">Guardar Tipo de Gráfico</button>
+
+  <div class="radio-buttons">
+    <label>
+      <input id="radioDefault" type="radio" name="chartType" value="bar" onchange="changeChartType('bar')" checked> Barras
+    </label>
+    <label>
+      <input type="radio" name="chartType" value="donut" onchange="changeChartType('donut')"> Donut
+    </label>
+    <label>
+      <input type="radio" name="chartType" value="line" onchange="changeChartType('line')"> Líneas
+    </label>
+  </div>
+
+  <div class="docu-apex">
+    <a href="https://apexcharts.com/docs/options/datalabels/" target="_blank">Documentación Apexcharts</a>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script src="src/custom.js"></script>
+
+
+
+</body>
+
+</html>
