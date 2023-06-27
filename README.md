@@ -1,6 +1,6 @@
 # CUSTOM-APEXCHART-GUI
 
-Motivación: Facilitar la customización de Apexcharts al reflejar al instante los cambios relizados.
+Motivación: Facilitar la customización de Apexcharts al reflejar al instante los cambios realizados.
 
 Ejemplo:
 
