@@ -18,7 +18,7 @@
     <link rel="icon" href="src/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body class="bg-primary-subtle bg-opacity-50">
 
   <div class="container-fluid">
     <div class="row">
@@ -28,24 +28,65 @@
       </div>
       <div class="col-4">
       
+        <!-- MENU -->
+
+<!--         <div class="container-fluid" role="group" aria-label="Menu">
+          <button type="button" class="btn btn-outline-primary mt-1">Título</button>
+          <button type="button" class="btn btn-outline-primary mt-1">Labels</button>
+          <button type="button" class="btn btn-outline-primary mt-1">Grid</button>
+        </div>
+        <div class="container-fluid" role="group" aria-label="Menu">  
+          <button type="button" class="btn btn-outline-primary mt-1">Chart</button>
+          <button type="button" class="btn btn-outline-primary mt-1">Xaxis</button>
+          <button type="button" class="btn btn-outline-primary mt-1">Yaxis</button>
+        </div> -->
+
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-1 ">Título</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-1 ">Labels</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-1">Grid</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-1">Chart</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-1">Xaxis</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-1">Yaxis</button>
+            </div>
+          </div>
+        </div>        
+
         <!-- Modificaciones dinamicas -->
         
-        <div class="input-group mt-5">
+        <div class="input-group mt-2">
           <input type="text" class="form-control"  aria-label="Cambiar titulo" id="inputTitulo" name="inputTitulo"
           oninput="cambiarTitulo()"><br><br>
-          <button class="btn btn-outline-secondary" type="button" onclick="cambiarTitulo()">Titulo</button>
+          <button class="btn btn-outline-secondary" type="button">Titulo</button>
         </div>
 
         <div class="input-group mt-2">
           <input type="number" class="form-control"  aria-label="Cambiar titulo font size" id="inputTituloFontSize" name="inputTituloFontSize"
           min="6" max="96" oninput="cambiarTituloFontSize()" onkeypress="return onlyNumbers(event)" ><br><br>
-          <button class="btn btn-outline-secondary" type="button" onclick="cambiarTituloFontSize()">T Font Size</button>
+          <button class="btn btn-outline-secondary" type="button">T Font Size</button>
         </div>
 
         <div class="input-group mt-2">
           <input type="number" class="form-control"  aria-label="Cambiar titulo font weight" id="inputTituloFontWeight" name="inputTitulo"
           oninput="cambiarTituloFontWeight(event)" min="100" max="900" step="100"><br><br>
-          <button class="btn btn-outline-secondary" type="button" onclick="cambiarTituloFontWeight()">T Font Weight</button>
+          <button class="btn btn-outline-secondary" type="button">T Font Weight</button>
         </div>
 
         <div class="input-group mt-2">
@@ -58,6 +99,12 @@
             <option value="system-ui">system-ui</option>
           </select>
           <button class="btn btn-outline-secondary" type="button">T Font family</button>
+        </div>
+
+        <div class="input-group mt-2">
+          <input type="color" class="form-control"  aria-label="Cambiar titulo color" id="inputTituloColor" name="inputColor"
+          oninput="cambiarTituloColor(event)"><br><br>
+          <button class="btn btn-outline-secondary" type="button">T Color</button>
         </div>
       
       

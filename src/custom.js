@@ -4,18 +4,18 @@ window.onload=check;
 function check() {
   document.getElementById("radioDefault").checked = true;
 
-document.getElementById("inputTitulo").value = tituloCUSTOM;
-//document.getElementById("inputTituloFontSize").value = tituloFontSizeCUSTOM;
-document.getElementById("inputTituloFontSize").value = 22;
+  document.getElementById("inputTitulo").value = tituloCUSTOM;
 
+  document.getElementById("inputTituloFontSize").value = tituloFontSizeCUSTOM;
 
-var selectElement = document.getElementById('inputTituloFontFamily');
-var defaultValue = 'sans-serif'; // Set the default value here
+  document.getElementById("inputTituloFontWeight").value = tituloFontWeightCUSTOM;
 
-selectElement.value = defaultValue;
+  document.getElementById('inputTituloFontFamily').value = tituloFontFamilyCUSTOM;
 
-tituloFontFamilyCUSTOM = defaultValue;
+  document.getElementById('inputTituloColor').value = tituloColorCUSTOM;
+
   
+
 }
 
 //Utilidad
@@ -39,19 +39,21 @@ let alturaCUSTOM = 350;
 tituloCUSTOM = 'Ventas últimos 5 meses';
 //document.getElementById("inputTitulo").placeholder = tituloCUSTOM;
 
-tituloFontSizeCUSTOM = 22 //14 es el valor default que trae apexcharts al parecer
+tituloFontSizeCUSTOM = 32 //14 es el valor default que trae apexcharts al parecer
 //document.getElementById("inputTituloFontSize").value = tituloFontSizeCUSTOM;
 
 tituloFontWeightCUSTOM = 900 //900 es el valor default que trae apexcharts al parecer
 //document.getElementById("inputTituloFontWeight").value = tituloFontWeightCUSTOM;
 
-tituloFontFamilyCUSTOM = ''
+tituloFontFamilyCUSTOM = 'sans-serif'
 //document.getElementById("inputTituloFontFamily").value = tituloFontFamilyCUSTOM;
 
+tituloColorCUSTOM = '#555555'
 
-let nombreSerieCUSTOM = 'Ventas';
+nombreSerieCUSTOM = 'Ventas';
 
-// Datos del gráfico de barras
+// Datos del gráfico de barras ********************************************************************************************
+//*************************************************************************************************************************
 var barOptions = {
   series: [{
     name: nombreSerieCUSTOM,
@@ -73,10 +75,14 @@ var barOptions = {
     align: 'left',
     style: {
         fontSize:  tituloFontSizeCUSTOM,
+        fontWeight:  tituloFontWeightCUSTOM,
+        fontFamily:  tituloFontFamilyCUSTOM,
+        color: tituloColorCUSTOM
     }
   },
 };
-
+// Datos del gráfico de líneas ********************************************************************************************
+//*************************************************************************************************************************
 var lineOptions = {
   series: [{
     name: nombreSerieCUSTOM,
@@ -100,6 +106,9 @@ var lineOptions = {
     align: 'left',
     style: {
         fontSize:  tituloFontSizeCUSTOM,
+        fontWeight:  tituloFontWeightCUSTOM,
+        fontFamily:  tituloFontFamilyCUSTOM,
+        color: tituloColorCUSTOM
     }
   },
   grid: {
@@ -112,8 +121,8 @@ var lineOptions = {
     categories: categoriasCUSTOM,
   }
 };
-
-// Configuración del gráfico de donut
+// Datos del gráfico de donut ********************************************************************************************
+//************************************************************************************************************************
 var donutOptions = {
   series: datosCUSTOM, //no es compatible con name:
   chart: {
@@ -138,6 +147,9 @@ var donutOptions = {
     align: 'left',
     style: {
         fontSize:  tituloFontSizeCUSTOM,
+        fontWeight:  tituloFontWeightCUSTOM,
+        fontFamily:  tituloFontFamilyCUSTOM,
+        color: tituloColorCUSTOM
     }
   },
 };
@@ -159,9 +171,9 @@ function changeChartType(type) {
 
     donutOptions.title.style = {
         fontSize:  tituloFontSizeCUSTOM,
-        fontWeight:  tituloFontWeightCUSTOM, //'bold',
+        fontWeight:  tituloFontWeightCUSTOM,
         fontFamily:  tituloFontFamilyCUSTOM,
-        //color:  '#263238'
+        color:  tituloColorCUSTOM
       };
     
     chart = new ApexCharts(document.querySelector("#chart"), donutOptions);
@@ -176,7 +188,7 @@ function changeChartType(type) {
         fontSize:  tituloFontSizeCUSTOM,
         fontWeight:  tituloFontWeightCUSTOM, //'bold',
         fontFamily:  tituloFontFamilyCUSTOM,
-        //color:  '#263238'
+        color:  tituloColorCUSTOM
       };
 
     chart = new ApexCharts(document.querySelector("#chart"), barOptions);
@@ -191,7 +203,7 @@ function changeChartType(type) {
         fontSize:  tituloFontSizeCUSTOM,
         fontWeight:  tituloFontWeightCUSTOM, //'bold',
         fontFamily:  tituloFontFamilyCUSTOM,
-        //color:  '#263238'
+        color:  tituloColorCUSTOM
       };
 
     chart = new ApexCharts(document.querySelector("#chart"), lineOptions);
@@ -286,5 +298,28 @@ function cambiarTituloFontFamily(event) {
     if (chartType === 'line') {
         changeChartType('line');
     }
+
+}
+
+
+
+
+function cambiarTituloColor(event) {
+
+  const inputValue = event.target.value;
+
+  tituloColorCUSTOM = inputValue;
+
+  if (chartType === 'donut') {
+      changeChartType('donut');
+  }
+
+  if (chartType === 'bar') {
+      changeChartType('bar');
+  }
+
+  if (chartType === 'line') {
+      changeChartType('line');
+  }
 
 }
