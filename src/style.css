@@ -37,3 +37,28 @@
   .radio-buttons label {
     margin-right: 10px;
   }
+
+  #clock {
+    font-size: 32px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+  }
+
+  .digit {
+    padding: 5px;
+  }
+
+  .dark {
+    color: #333;
+  }
+
+  .medium-dark {
+    color: #777;
+  }
+
+  .light {
+    color: #bbb;
+  }

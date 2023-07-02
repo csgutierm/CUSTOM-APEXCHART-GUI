@@ -178,6 +178,7 @@ function changeChartType(type) {
     
     chart = new ApexCharts(document.querySelector("#chart"), donutOptions);
     chart.render();
+
   }
 
   if (type === 'bar') {
@@ -186,7 +187,7 @@ function changeChartType(type) {
 
     barOptions.title.style = {
         fontSize:  tituloFontSizeCUSTOM,
-        fontWeight:  tituloFontWeightCUSTOM, //'bold',
+        fontWeight:  tituloFontWeightCUSTOM,
         fontFamily:  tituloFontFamilyCUSTOM,
         color:  tituloColorCUSTOM
       };
@@ -201,7 +202,7 @@ function changeChartType(type) {
 
     lineOptions.title.style = {
         fontSize:  tituloFontSizeCUSTOM,
-        fontWeight:  tituloFontWeightCUSTOM, //'bold',
+        fontWeight:  tituloFontWeightCUSTOM,
         fontFamily:  tituloFontFamilyCUSTOM,
         color:  tituloColorCUSTOM
       };
