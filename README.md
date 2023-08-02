@@ -1,6 +1,6 @@
 # CUSTOM-APEXCHART-GUI
 
-[Preview](https://raw.githack.com/csgutierm/CUSTOM-APEXCHART-GUI/main/barVSdonut.html)
+[Preview (usando githack)](https://raw.githack.com/csgutierm/CUSTOM-APEXCHART-GUI/main/barVSdonut.html)
 
 Motivación: Facilitar la customización de Apexcharts al reflejar al instante los cambios realizados.
 
