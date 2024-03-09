@@ -35,3 +35,5 @@ function updateClock() {
       return value.toString();
     }
   }
+
+startClock();
