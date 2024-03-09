@@ -30,5 +30,3 @@ function updateClock() {
       return value.toString();
     }
   }
-
-  setInterval(updateClock, 1000); // Update every 1 second
