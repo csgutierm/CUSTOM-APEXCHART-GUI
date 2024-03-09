@@ -1,3 +1,8 @@
+function startClock() {
+     updateClock();
+     setInterval(updateClock, 1000);
+}
+
 function updateClock() {
     var now = new Date();
     var hours = now.getHours();
